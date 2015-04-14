@@ -5,3 +5,7 @@
 /.idea/dictionaries
 .DS_Store
 /build
+
+# v nasledujicim diru mam IDA databazi, ktera neni v repositari
+
+disassembling-IDA

@@ -33,15 +33,19 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .registers 6
 
-    move-object v0, p0
+   # kod volani super.onCreate(savedInstanceState); [rucne doplneno ze zdrojaku]
 
-    move-object v1, p1
+    move-object v0, p0   # p0: prvni parametr - "this" pointer
+
+    move-object v1, p1   # p1: druhy parametr - Bundle
 
     move-object v2, v0
 
     move-object v3, v1
 
     invoke-super {v2, v3}, Landroid/support/v7/app/ActionBarActivity;->onCreate(Landroid/os/Bundle;)V
+
+   # kod volani onCreateEx(); [rucne doplneno ze zdrojaku]
 
     move-object v2, v0
 
@@ -53,15 +57,19 @@
 .method public onCreateEx()V
     .registers 9
 
-    move-object v0, p0
+   # kod Intent intent = getIntent(); [rucne doplneno ze zdrojaku]
+
+    move-object v0, p0   # p0: prvni parametr - "this" pointer
 
     move-object v4, v0
 
     invoke-virtual {v4}, Lcz/base48/myapplication/DisplayMessageActivity;->getIntent()Landroid/content/Intent;
 
-    move-result-object v4
+    move-result-object v4   # uloz Intent do v4, ten bude prvni parametr pro nasledujici volani
 
-    move-object v1, v4
+   # kod String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE); [rucne doplneno ze zdrojaku]
+
+    move-object v1, v4   # Intent class pointer
 
     move-object v4, v1
 
@@ -69,7 +77,7 @@
 
     invoke-virtual {v4, v5}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v4   # uloz vysledny objekt (retezec) do v4
 
     move-object v2, v4
 

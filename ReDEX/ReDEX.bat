@@ -1,0 +1,1 @@
+java -cp . ReDEX classes.dex

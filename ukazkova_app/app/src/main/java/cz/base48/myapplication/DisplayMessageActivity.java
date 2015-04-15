@@ -27,10 +27,10 @@ public class DisplayMessageActivity extends ActionBarActivity {
         setContentView(textView);
     }
 
-    // newText() vytvorena pro 5. workshop
+    // newText() vytvorena pro 5. a 6. workshop
 
     public String newText() {
-        return "Podvodniku!";
+        return "base48.cz skiddies pwn you!";
     }
 
     @Override
